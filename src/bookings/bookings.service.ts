@@ -18,15 +18,13 @@ export class BookingsService {
     });
     return this.repo.save(booking);
   }
-
+  
 // Only showing the method that needs change
-
   async findOne(id: string) {
     const booking = await this.repo.findOne({ where: { id } });
     if (!booking) throw new NotFoundException('Booking not found');
     return booking;
   }
-
 
   findAll() {
     return this.repo.find({ relations: ['service'] });

@@ -24,8 +24,12 @@ describe('ServicesService', () => {
   });
 
   it('should create a service', async () => {
-    const dto = { name: 'Cleaning', category: 'Home', price: 100 };
-    const saved = { ...dto, id: 1 } as any;
+    const dto: Partial<Service> = {
+      name: 'Cleaning',
+      category: 'Home',
+      price: 100,
+    };
+    const saved: Service = { ...dto, id: 1 } as Service;
     jest.spyOn(repo, 'save').mockResolvedValue(saved);
     expect(await service.create(dto as any)).toEqual(saved);
   });
@@ -34,7 +38,7 @@ describe('ServicesService', () => {
     const result = [{ id: 1, name: 'Cleaning' }];
     jest.spyOn(repo, 'findAndCount').mockResolvedValue([result as any, 1]);
     const data = await service.findAll(1, 10);
-    expect(data.items).toEqual(result);
+    expect(data.data).toEqual(result);
     expect(data.total).toBe(1);
   });
 });

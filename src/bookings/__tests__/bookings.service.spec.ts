@@ -24,8 +24,14 @@ describe('BookingsService', () => {
   });
 
   it('should create a booking', async () => {
-    const dto = { customerName: 'John', customerPhone: '1234567890', serviceId: '1' };
-    const savedBooking = { ...dto, id: 'uuid' } as any;
+    const dto = {
+      customerName: 'John',
+      customerPhone: '1234567890',
+      serviceId: '1',
+    };
+    const savedBooking: Booking = { ...dto, id: 'uuid' } as Booking;
+
+    jest.spyOn(repo, 'create').mockReturnValue(savedBooking);
     jest.spyOn(repo, 'save').mockResolvedValue(savedBooking);
 
     expect(await service.create(dto as any)).toEqual(savedBooking);
