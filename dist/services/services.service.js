@@ -30,7 +30,7 @@ let ServicesService = class ServicesService {
         return { data, total };
     }
     async findOne(id) {
-        const svc = await this.repo.findOne(id);
+        const svc = await this.repo.findOne({ where: { id } });
         if (!svc)
             throw new common_1.NotFoundException('Service not found');
         return svc;

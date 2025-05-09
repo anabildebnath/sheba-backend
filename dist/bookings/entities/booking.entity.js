@@ -8,11 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Booking = void 0;
 const typeorm_1 = require("typeorm");
-const service_entity_1 = require("../services/entities/service.entity");
+const service_entity_1 = require("../../services/entities/service.entity");
 let Booking = class Booking {
     id;
     customerName;
@@ -38,7 +37,7 @@ __decorate([
 ], Booking.prototype, "customerPhone", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: 'timestamp', nullable: true }),
-    __metadata("design:type", Date)
+    __metadata("design:type", Object)
 ], Booking.prototype, "scheduleAt", void 0);
 __decorate([
     (0, typeorm_1.Column)({ default: 'pending' }),
@@ -47,7 +46,7 @@ __decorate([
 __decorate([
     (0, typeorm_1.ManyToOne)(() => service_entity_1.Service),
     (0, typeorm_1.JoinColumn)({ name: 'serviceId' }),
-    __metadata("design:type", typeof (_a = typeof service_entity_1.Service !== "undefined" && service_entity_1.Service) === "function" ? _a : Object)
+    __metadata("design:type", service_entity_1.Service)
 ], Booking.prototype, "service", void 0);
 __decorate([
     (0, typeorm_1.Column)(),

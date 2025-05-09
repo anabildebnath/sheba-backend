@@ -18,7 +18,7 @@ let NotificationsProcessor = class NotificationsProcessor {
         this.notificationsService = notificationsService;
     }
     async handleSendConfirmation(job) {
-        await this.notificationsService.sendConfirmation(job.data.bookingId, job.data.customerPhone);
+        await this.notificationsService.sendBookingNotification(job.data.bookingId, job.data.customerEmail, job.data.customerPhone);
     }
 };
 exports.NotificationsProcessor = NotificationsProcessor;

@@ -6,5 +6,6 @@ export declare class NotificationsProcessor {
     handleSendConfirmation(job: Job<{
         bookingId: string;
         customerPhone: string;
+        customerEmail: string;
     }>): Promise<void>;
 }

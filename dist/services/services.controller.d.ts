@@ -4,12 +4,12 @@ import { UpdateServiceDto } from './dto/update-service.dto';
 export declare class ServicesController {
     private svc;
     constructor(svc: ServicesService);
-    create(dto: CreateServiceDto): any;
+    create(dto: CreateServiceDto): Promise<import("./entities/service.entity").Service>;
     findAll(page?: string, limit?: string): Promise<{
-        data: any;
-        total: any;
+        data: import("./entities/service.entity").Service[];
+        total: number;
     }>;
-    findOne(id: string): Promise<any>;
-    update(id: string, dto: UpdateServiceDto): Promise<any>;
+    findOne(id: string): Promise<import("./entities/service.entity").Service>;
+    update(id: string, dto: UpdateServiceDto): Promise<import("./entities/service.entity").Service>;
     remove(id: string): Promise<void>;
 }

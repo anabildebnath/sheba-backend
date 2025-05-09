@@ -1,13 +1,12 @@
+// File: src/auth/auth.controller.ts
 import { Controller, Post, Body } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { LoginDto } from './dto/login.dto';
+import { LoginDto } from './dto/login.dto'; // Correct import
 
 @Controller('auth')
 export class AuthController {
-constructor(private auth: AuthService) {}
-
-@Post('login')
-login(@Body() dto: LoginDto) {
-return this.auth.login(dto);
-}
+  @Post('login')
+  login(@Body() loginDto: LoginDto) {
+    // Implement login logic here
+    console.log(loginDto); // Just for testing, you can remove this later
+  }
 }

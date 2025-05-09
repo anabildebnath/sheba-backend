@@ -3,6 +3,6 @@ import { CreateBookingDto } from './dto/create-booking.dto';
 export declare class BookingsController {
     private readonly bookingsService;
     constructor(bookingsService: BookingsService);
-    create(dto: CreateBookingDto): Promise<any>;
-    getStatus(id: string): Promise<any>;
+    create(dto: CreateBookingDto): Promise<import("./entities/booking.entity").Booking>;
+    getStatus(id: string): Promise<import("./entities/booking.entity").Booking>;
 }

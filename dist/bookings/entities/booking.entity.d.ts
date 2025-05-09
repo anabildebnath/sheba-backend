@@ -1,9 +1,9 @@
-import { Service } from '../services/entities/service.entity';
+import { Service } from '../../services/entities/service.entity';
 export declare class Booking {
     id: string;
     customerName: string;
     customerPhone: string;
-    scheduleAt?: Date;
+    scheduleAt?: Date | null;
     status: string;
     service: Service;
     serviceId: number;

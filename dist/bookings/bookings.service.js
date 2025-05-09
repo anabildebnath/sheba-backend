@@ -32,7 +32,7 @@ let BookingsService = class BookingsService {
         return this.repo.save(booking);
     }
     async findOne(id) {
-        const booking = await this.repo.findOne(id);
+        const booking = await this.repo.findOne({ where: { id } });
         if (!booking)
             throw new common_1.NotFoundException('Booking not found');
         return booking;

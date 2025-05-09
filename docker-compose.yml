@@ -1,26 +1,21 @@
-version: '3.8'
 services:
-  api:
-    build: .
-    ports:
-      - '3000:3000'
-    env_file: .env
-    depends_on:
-      - db
-      - redis
   db:
     image: postgres:15
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: sheba
-    ports:
-      - '5432:5432'
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-  redis:
-    image: redis:7
-    ports:
-      - '6379:6379'
-volumes:
-  pgdata:
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/sheba

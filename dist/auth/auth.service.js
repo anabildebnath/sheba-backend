@@ -23,7 +23,7 @@ let AuthService = class AuthService {
     }
     async validateUser(username, pass) {
         const user = await this.users.findOneByUsername(username);
-        if (user && await bcrypt.compare(pass, user.password))
+        if (user && (await bcrypt.compare(pass, user.password)))
             return user;
         throw new common_1.UnauthorizedException();
     }
@@ -35,7 +35,6 @@ let AuthService = class AuthService {
 exports.AuthService = AuthService;
 exports.AuthService = AuthService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [users_service_1.UsersService,
-        jwt_1.JwtService])
+    __metadata("design:paramtypes", [users_service_1.UsersService, jwt_1.JwtService])
 ], AuthService);
 //# sourceMappingURL=auth.service.js.map
