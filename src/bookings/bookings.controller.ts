@@ -1,3 +1,4 @@
+//Files: src/bookings/bookings.controller.ts
 import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { BookingsService } from './bookings.service';
 import { CreateBookingDto } from './dto/create-booking.dto';

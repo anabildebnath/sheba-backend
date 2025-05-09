@@ -1,3 +1,4 @@
+//File: src/bookings/dto/create-booking.dto.ts
 import { IsString, IsUUID, IsOptional, IsDateString } from 'class-validator';
 
 export class CreateBookingDto {

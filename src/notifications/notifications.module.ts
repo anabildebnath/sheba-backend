@@ -1,3 +1,4 @@
+//File: src/notifications/notifications.module.ts
 import { Module } from '@nestjs/common';
 import { BullModule } from '@nestjs/bull';
 import { NotificationsProcessor } from './notifications.processor';

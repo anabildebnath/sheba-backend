@@ -1,3 +1,4 @@
+//File: src/bookings/entities/booking.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn } from 'typeorm';
 import { Service } from '../../services/entities/service.entity'; // Correct relative import
 

@@ -1,3 +1,4 @@
+// File: src/admin/admin.module.ts
 import { Module } from '@nestjs/common';
 import { AdminServicesController } from './services.controller';
 import { AdminBookingsController } from './bookings.controller';
