@@ -22,9 +22,7 @@ database: process.env.POSTGRES_DB,
 entities: [__dirname + '/**/*.entity{.ts,.js}'],
 synchronize: true,
 }),
-BullModule.forRoot({
-redis: { host: process.env.REDIS_HOST, port: +process.env.REDIS_PORT }
-}),
+BullModule.forRoot({ redis: { host: process.env.REDIS_HOST, port: +process.env.REDIS_PORT } }),
 AuthModule,
 UsersModule,
 ServicesModule,
