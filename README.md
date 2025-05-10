@@ -136,21 +136,27 @@ docker-compose up -d
 
 Postgres: localhost:5432
 
+![1746886236667](image/README/1746886236667.png)
+
 # Redis:    localhost:6379
+
+![1746886679378](image/README/1746886679378.png)
+
+
+Run everything inside docker container
+
+![1746886724923](image/README/1746886724923.png)
 
 # 4. Install dependencies & start the app
 
-npm install
-npm run start:dev
+* npm install
+* npm run start:dev
 
 # The API will be running at:
 
 http://localhost:3000
 
-
 ---
-
-
 
 ## API Documentation
 
@@ -173,7 +179,6 @@ All endpoints are prefixed with `/api`.
 {
   "access_token": "JWT_TOKEN_HERE"
 }
-
 
 ### Public Endpoints
 
@@ -254,10 +259,7 @@ Add the header:
 
 ---
 
-
-
 ## Running Tests
-
 
 ### Run all tests
 
